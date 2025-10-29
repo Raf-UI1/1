@@ -3,63 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameVerse</title>
-</head>
-<body style="margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:#0d0d0d; color:white; text-align:center;">
+    <title>CyberPulse Gaming</title>
+    <style>
+        /* ===== Base Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Header -->
-    <header style="background:linear-gradient(90deg, #1a1a1a, #333); padding:20px 0;">
-        <h1 style="font-size:40px; color:#00ff99; text-shadow:2px 2px 5px #000;">🎮 Welcome to GameVerse</h1>
-        <p style="font-size:18px; color:#ccc;">Your portal to epic adventures and gaming news</p>
+        body {
+            font-family: 'Orbitron', Arial, sans-serif;
+            background: radial-gradient(circle at top, #120018, #090010);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Navbar ===== */
+        header {
+            background: rgba(10, 0, 20, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #b300ff;
+            box-shadow: 0 0 15px #7a00cc;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #d29cff;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #b300ff;
+        }
+
+        /* ===== Hero Section ===== */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #2a004a, #000);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            color: #d29cff;
+            text-shadow: 0 0 25px #b300ff;
+            animation: glow 2s infinite alternate;
+        }
+
+        #hero p {
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: #cbb3ff;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #b300ff; }
+            to { text-shadow: 0 0 30px #ff00ff; }
+        }
+
+        #cta-btn {
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-size: 18px;
+            border: 2px solid #b300ff;
+            background: transparent;
+            color: #d29cff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cta-btn:hover {
+            background: linear-gradient(135deg, #b300ff, #ff00ff);
+            color: #fff;
+            box-shadow: 0 0 25px #b300ff;
+            transform: scale(1.1);
+        }
+
+        /* ===== Game Section ===== */
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #games {
+            background: linear-gradient(180deg, #120018, #200030);
+        }
+
+        #games h2 {
+            color: #d29cff;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-shadow: 0 0 10px #b300ff;
+        }
+
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .game-card {
+            background: rgba(30, 0, 50, 0.7);
+            border: 1px solid #b300ff;
+            border-radius: 12px;
+            width: 250px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(179, 0, 255, 0.3);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px #b300ff;
+        }
+
+        .game-card h3 {
+            color: #ff99ff;
+            margin-bottom: 10px;
+        }
+
+        .game-card p {
+            color: #d8b3ff;
+            font-size: 0.95em;
+        }
+
+        /* ===== Contact Section ===== */
+        #contact {
+            background: radial-gradient(circle at bottom, #2a004a, #0d0018);
+        }
+
+        #contact h2 {
+            color: #d29cff;
+            margin-bottom: 15px;
+        }
+
+        #contact p {
+            color: #cbb3ff;
+            margin-bottom: 20px;
+        }
+
+        #join-btn {
+            padding: 15px 35px;
+            font-size: 18px;
+            border: 2px solid #ff00ff;
+            background: transparent;
+            color: #ff99ff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #join-btn:hover {
+            background: linear-gradient(135deg, #b300ff, #ff00ff);
+            color: #fff;
+            box-shadow: 0 0 25px #ff00ff;
+            transform: scale(1.1);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #0a0010;
+            color: #b87cff;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #b300ff;
+        }
+
+        footer a {
+            color: #ff99ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-shadow: 0 0 10px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Join</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav style="margin-top:15px;">
-        <button style="background-color:#00ff99; border:none; color:#000; padding:10px 20px; margin:5px; font-size:16px; cursor:pointer; border-radius:5px; transition:0.3s;"
-            onmouseover="this.style.backgroundColor='#00cc7a'; this.style.color='white';"
-            onmouseout="this.style.backgroundColor='#00ff99'; this.style.color='#000';"
-            onclick="alert('Home button clicked!')">Home</button>
+    <section id="hero">
+        <h1>CyberPulse Gaming</h1>
+        <p>Step into the neon world of purple power and digital domination.</p>
+        <button id="cta-btn">Enter the Grid</button>
+    </section>
 
-        <button style="background-color:#00ff99; border:none; color:#000; padding:10px 20px; margin:5px; font-size:16px; cursor:pointer; border-radius:5px; transition:0.3s;"
-            onmouseover="this.style.backgroundColor='#00cc7a'; this.style.color='white';"
-            onmouseout="this.style.backgroundColor='#00ff99'; this.style.color='#000';"
-            onclick="alert('Games button clicked!')">Games</button>
+    <section id="games">
+        <h2>Our Featured Games</h2>
+        <div class="game-list">
+            <div class="game-card">
+                <h3>Neon Drift</h3>
+                <p>Race through the cyber streets with blazing speed and style.</p>
+            </div>
+            <div class="game-card">
+                <h3>CodeBreaker</h3>
+                <p>Hack into the system, crack codes, and control the future.</p>
+            </div>
+            <div class="game-card">
+                <h3>Phantom Ops</h3>
+                <p>Stealth, combat, and neural infiltration in the digital dark.</p>
+            </div>
+        </div>
+    </section>
 
-        <button style="background-color:#00ff99; border:none; color:#000; padding:10px 20px; margin:5px; font-size:16px; cursor:pointer; border-radius:5px; transition:0.3s;"
-            onmouseover="this.style.backgroundColor='#00cc7a'; this.style.color='white';"
-            onmouseout="this.style.backgroundColor='#00ff99'; this.style.color='#000';"
-            onclick="alert('News button clicked!')">News</button>
+    <section id="contact">
+        <h2>Join the Cyber Revolution</h2>
+        <p>Sign up to get early access, exclusive updates, and limited edition skins.</p>
+        <button id="join-btn">Join Now</button>
+    </section>
 
-        <button style="background-color:#00ff99; border:none; color:#000; padding:10px 20px; margin:5px; font-size:16px; cursor:pointer; border-radius:5px; transition:0.3s;"
-            onmouseover="this.style.backgroundColor='#00cc7a'; this.style.color='white';"
-            onmouseout="this.style.backgroundColor='#00ff99'; this.style.color='#000';"
-            onclick="alert('Contact button clicked!')">Contact</button>
-    </nav>
-
-    <!-- Main Content -->
-    <main style="margin-top:40px;">
-        <img src="https://cdn.pixabay.com/photo/2017/08/30/11/43/controller-2694477_1280.png" alt="Gaming Controller"
-             style="width:200px; margin-bottom:20px; filter:drop-shadow(0 0 10px #00ff99);">
-        <h2 style="color:#00ff99;">Level Up Your Gaming Experience</h2>
-        <p style="max-width:600px; margin:auto; color:#ccc; font-size:18px;">
-            Join our community of passionate gamers! Explore the latest news, discover upcoming titles, and connect with other players.
-            Whether you’re into shooters, strategy, or RPGs — GameVerse has you covered.
-        </p>
-
-        <button style="background-color:#ff0066; border:none; color:white; padding:12px 30px; margin-top:25px; font-size:18px; cursor:pointer; border-radius:5px; transition:0.3s;"
-            onmouseover="this.style.backgroundColor='#cc0052'; this.style.transform='scale(1.1)';"
-            onmouseout="this.style.backgroundColor='#ff0066'; this.style.transform='scale(1)';"
-            onclick="alert('Welcome to the GameVerse Community!')">
-            Join Now
-        </button>
-    </main>
-
-    <!-- Footer -->
-    <footer style="margin-top:60px; background:#1a1a1a; padding:20px;">
-        <p style="color:#888;">&copy; 2025 GameVerse. All Rights Reserved.</p>
-        <p style="color:#00ff99;">Follow us on <span style="cursor:pointer; text-decoration:underline;" onclick="alert('Twitter link coming soon!')">Twitter</span> & <span style="cursor:pointer; text-decoration:underline;" onclick="alert('Discord link coming soon!')">Discord</span>.</p>
+    <footer>
+        <p>&copy; 2025 CyberPulse Gaming | <a href="#">Terms & Privacy</a></p>
     </footer>
 
+    <script>
+        // Button Interactivity
+        document.getElementById("cta-btn").addEventListener("click", function() {
+            alert("⚡ Welcome to CyberPulse! Initializing connection to the Grid...");
+        });
+
+        document.getElementById("join-btn").addEventListener("click", function() {
+            const gamer = prompt("Enter your gamer alias:");
+            if (gamer) {
+                alert(`👾 Welcome to the CyberPulse Network, ${gamer}!`);
+            } else {
+                alert("No alias? No problem. Come back when you're ready to join the grid!");
+            }
+        });
+    </script>
 </body>
 </html>
-
